@@ -1,0 +1,78 @@
+# kuraberu-keisannsaito
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ポートフォリオ</title>
+
+</head>
+
+<body>
+<header>
+    <h1>どちらがお得？</h1>
+</header>
+    
+    <form name="fm">
+    <h>商品A</h>
+    <p>価格</p>
+    <input size="20" type="text" name="A">
+    <p>容量</p>
+    <input size="20" type="text" name="B">
+    <input type="button" value="計算をする" onclick="Add()">
+    <p>一あたりの値段</p>
+    <input size="20" type="text" name="C">
+    </form>
+
+    <form name="fm1">
+    <h>商品B</h>
+    <p>価格</p>
+    <input size="20" type="text" name="D">
+    <p>容量</p>
+    <input size="20" type="text" name="E">
+    <input type="button" value="計算をする" onclick="Add1()">
+    <p>一あたりの値段</p>
+    <input size="20" type="text" name="F">
+    </form>
+    
+    <form name="fm3">
+    <input type="button" value="AとBを比べる" onclick="Add2()">
+    <input size="20" type="text" name="G">
+    </form>
+<footer>
+
+</footer>
+    <script language="JavaScript">
+        
+
+        
+    function Add(){
+        document.fm.C.value =eval(document.fm.A.value) / eval(document.fm.B.value);
+    }
+        
+     function Add1(){
+        document.fm1.F.value =eval(document.fm1.D.value) / eval(document.fm1.E.value);
+    }
+        
+
+        
+    function Add2() {
+        var C = parseFloat(fm.A.value)/parseFloat(fm.B.value);
+	    var F = parseFloat(fm1.D.value)/parseFloat(fm1.E.value);
+   
+        if (C < F){
+            document.fm3.G.value=
+                '商品Aがお得です！';
+        } else if(C > F){
+            document.fm3.G.value=
+                '商品Bがお得です！';
+            
+        }
+
+    }
+        Add2();
+        
+        
+    </script>
+  
+</body>
+</html>
